@@ -1,29 +1,29 @@
-[//]: # (<html>)
+<html>
 
-[//]: # (<head>)
+<head>
 
-[//]: # ()
-[//]: # (</head>)
 
-[//]: # ()
-[//]: # (<body>)
+</head>
 
-[//]: # (<div id="home">)
 
-[//]: # (    <h2>All Posts</h2>)
+<body>
 
-[//]: # (    <ul class="posts">)
+<div id="home">
 
-[//]: # (        {% for post in site.posts %})
+    <h2>All Posts</h2>
 
-[//]: # (        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.*title* }}</a></li>)
+    <ul class="posts">
 
-[//]: # (        {% endfor %})
+        {% for post in site.posts %}
 
-[//]: # (    </ul>)
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.*title* }}</a></li>
 
-[//]: # (</div>)
+        {% endfor %}
 
-[//]: # (</body>)
+    </ul>
 
-[//]: # (</html>)
+</div>
+
+</body>
+
+</html>
