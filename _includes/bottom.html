@@ -1,0 +1,113 @@
+<footer class="foot  card-body bg-light ">
+    <div class="container ">
+
+        <!--古诗-->
+        <div class="row gushi">
+            <div class="col-lg-4 line"></div>
+            <div class="col-lg-4" id="gushi" style="text-align: center">
+                月上柳梢头 人约黄昏后
+            </div>
+            <div class="col-lg-4 line "> </div>
+        </div>
+        <br/>
+        <br/>
+        <!--古诗-->
+        <div class="row meta">
+            <div class="col-lg-4 logo">
+                <img class="footer_logo" src="{{ site.url }}/style/images/logo-liorange.png"/> </a>
+                <p> <a href="http://www.liberxue.com/2017/08/03/Jekyllthemes.html" title="访问 Jekyll liberxue主题"  data-hover="Jekyll liberxue"target="_blank">Jekyll liberxue</a> by <a href="http://www.liberxue.com/about" target="_blank">liberxue</a></p>
+                <p>Powered by <a href="{{ site.url }}/tags/"  target="_blank" rel="nofollow">LeiYorange</a></p>
+                <p>总计文章：{{paginator.total_posts}}篇</p>
+            </div>
+            </br>
+            <div class="col-lg-4 top">
+                <h3 class="meta-title">置顶文章</h3>
+                {% for post in site.posts limit:15 %}
+                {% if post.istop %}
+                <li><a href="{{ post.url }}" >{{ post.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </div>
+            </br>
+            <div class="col-lg-4 latest" >
+                <h3 class="meta-title">最新文章</h3>
+                {% for post in site.posts limit:14 %}
+                {% if post.book %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+<script>
+    // 获取古诗
+    $(document).ready(function () {
+        $.ajax({
+            type : "GET",
+            //请求的媒体类型
+            url : "https://v2.jinrishici.com/one.json",
+            success : function(result) {
+                document.getElementById("gushi").innerHTML = result.data.content;
+            },
+            //请求失败，包含具体的错误信息
+            error : function(e){
+            }
+        });
+    });
+</script>
+
+<style>
+    .line {
+        display: inline-block;
+        width: 30%;
+        border-top: 2px solid #854906;
+        overflow: hidden;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: 1%
+    }
+
+
+    .foot .container .meta .logo .footer_logo{
+        width: 38%;
+    }
+    .meta-title{
+        font-size: 14px;
+        padding: 0 0 10px 0;
+        text-decoration: none;
+        color: #5f5f5f;
+    }
+    .logo a{
+        color: #767676;
+    }
+    .latest li {
+        font-size: 13px;
+        line-height: 25px;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #767676;
+    }
+    .latest a,p {
+        color: #767676;
+    }
+    .top li {
+        font-size: 13px;
+        line-height: 25px;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #767676;
+    }
+    .top a {
+        color: #767676;
+    }
+
+</style>

@@ -323,6 +323,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .bg-white {
     background-color: #fff !important;
+    /*background-color: #546E7A;*/
 }
 
 .bg-grey {
@@ -506,6 +507,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
 }
 
+
 .header.animated {
     -webkit-animation-duration: .5s;
     animation-duration: .5s;
@@ -554,6 +556,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: inline-block;
     width: 500px;
     padding-right: 5px;
+
 }
 
 .navbar-menu a {
@@ -1868,12 +1871,20 @@ pre code::after {
 }
 
 .footer-social .social-list {
+
     padding: 20px;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-family: "Abril Fatface", serif;
+    /*background-color: red;*/
 }
 
+.footer-social .social-list .line {
+    display: inline-block;
+    width: 20%;
+    border-top: 2px solid #ff9520 ;
+    overflow: hidden;
+}
 .footer-social .social-list a {
     font-size: 13px;
     padding: 0 25px;
