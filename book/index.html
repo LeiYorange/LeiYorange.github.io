@@ -13,14 +13,14 @@ layout: common
 	{% assign temp = temp | plus: 1 %}
 	{% if temp ==1%}
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm">
 			<div class="card">
 				<img src="{{posts.background-image}}" class="card-img-top" alt="...">
 				<div class="card-body">
 					<!--							<h5 class="card-title">{{ posts.title }}</h5>-->
 					<!--							<a class="card-text">{{ posts.category }}</a>-->
 					<!--							<a class="card-text">{{ posts.date | date: "%F %H:%M:%S "}}</a>-->
-					<p class="title is-2">{{ posts.title }}</p>
+					<p class="title is-3">{{ posts.title }}</p>
 					<p class="subtitle is-6">{{ posts.category }}</p>
 					<button type="button" class="btn btn-secondary btn-sm btn-block">Block level button</button>
 				</div>
@@ -30,12 +30,12 @@ layout: common
 	{% endif %}
 	{% if temp == 2%}
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm">
 			<div class="card">
 				<img src="{{posts.background-image}}" class="card-img-top" alt="...">
 				<div class="card-body">
-					<p class="title is-2">{{ posts.title }}</p>
-					<p class="subtitle is-6">{{ posts.category }}</p>
+					<p class="title is-3 text ">{{ posts.title }}</p>
+					<p class="subtitle is-6 text ">{{ posts.category }}</p>
 					<button type="button" class="btn btn-secondary btn-sm btn-block">Block level button</button>
 				</div>
 			</div>
@@ -43,12 +43,12 @@ layout: common
 		{% endif %}
 		{% if temp == 3%}
 		{% assign temp = temp | plus: -3 %}
-		<div class="col-sm-6">
+		<div class="col-sm">
 			<div class="card">
 				<img src="{{posts.background-image}}" class="card-img-top" alt="...">
 				<div class="card-body">
-					<p class="title is-2">{{ posts.title }}</p>
-					<p class="subtitle is-6">{{ posts.category }}</p>
+					<p class="title is-3 text">{{ posts.title }}</p>
+					<p class="subtitle is-6 text">{{ posts.category }}</p>
 					<button type="button" class="btn btn-secondary btn-sm btn-block">Block level button</button>
 				</div>
 			</div>
