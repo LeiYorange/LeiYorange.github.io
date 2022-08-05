@@ -1,5 +1,5 @@
 ---
-layout: sticky_notes
+layout: blog
 book: true
 background-image:  /assets/RE4CQjl_1920x1080.jpg
 category: 书籍

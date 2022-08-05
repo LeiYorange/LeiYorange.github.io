@@ -3,41 +3,60 @@ title: 看过的书|正在看的书
 description: "分享正在看和看过想看的一些书籍"
 layout: common
 ---
-
+<link rel="stylesheet" href="../style/common.css">
 <div class="container" >
-		{% assign temp = 0 %}
-		{% for posts in site.posts %}
-		{% if posts.book%}
-		{% assign temp = temp | plus: 1 %}
-
-		{% if temp ==1%}
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="card">
-						<img src="{{posts.background-image}}" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">{{ posts.title }}</h5>
-							<a class="card-text">{{ posts.category }}</a>
-							<a class="card-text">{{ posts.date | date: "%F %H:%M:%S "}}</a>
-						</div>
-					</div>
-				</div>
-		{%else if temp == 2%}
-				<div class="col-sm-6">
-					<div class="card">
-						<img src="{{posts.background-image}}" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">{{ posts.title }}</h5>
-							<a class="card-text">{{ posts.category }}</a>
-							<a class="card-text">{{ posts.date | date: "%F %H:%M:%S "}}</a>
-						</div>
-					</div>
+	{% assign temp = 0 %}
+	{% for posts in site.posts %}
+	{% if posts.book%}
+	{% assign temp = temp | plus: 1 %}
+	{% if temp ==1%}
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card">
+				<img src="{{posts.background-image}}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<!--							<h5 class="card-title">{{ posts.title }}</h5>-->
+					<!--							<a class="card-text">{{ posts.category }}</a>-->
+					<!--							<a class="card-text">{{ posts.date | date: "%F %H:%M:%S "}}</a>-->
+					<p class="title is-2">{{ posts.title }}</p>
+					<p class="subtitle is-6">{{ posts.category }}</p>
+					<button type="button" class="btn btn-secondary btn-sm btn-block">Block level button</button>
 				</div>
 			</div>
-		{% assign temp = temp | plus: -2 %}
+		</div>
+	</div>
+	{% endif %}
+	{% if temp == 2%}
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="card">
+				<img src="{{posts.background-image}}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<p class="title is-2">{{ posts.title }}</p>
+					<p class="subtitle is-6">{{ posts.category }}</p>
+					<button type="button" class="btn btn-secondary btn-sm btn-block">Block level button</button>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if temp == 3%}
+		{% assign temp = temp | plus: -3 %}
+		<div class="col-sm-6">
+			<div class="card">
+				<img src="{{posts.background-image}}" class="card-img-top" alt="...">
+				<div class="card-body">
+					<p class="title is-2">{{ posts.title }}</p>
+					<p class="subtitle is-6">{{ posts.category }}</p>
+					<button type="button" class="btn btn-secondary btn-sm btn-block">Block level button</button>
+				</div>
+			</div>
+		</div>
+
 		{% endif %}
 		{% endif %}
 		{% endfor %}
+
+
+	</div>
+
 </div>
-
-
